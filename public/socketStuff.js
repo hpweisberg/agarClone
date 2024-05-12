@@ -5,7 +5,7 @@ const init = async () => {
     const initOrbs = await socket.emitWithAck('init', {
         playerName: player.name,
     })
-    console.log('test', initOrbs);
+    console.log(initOrbs);
     orbs = initOrbs;
     draw(); // from canvasStuff.
 }
@@ -28,6 +28,6 @@ const init = async () => {
 //     draw(); //draw function is in canvasStuff
 // }
 
-socket.on('initReturn', (initData) => {
-    
+socket.on('tick', (players) => {
+    console.log(players)
 })
