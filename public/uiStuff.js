@@ -8,6 +8,7 @@ const context = canvas.getContext('2d');
 canvas.height = wHeight;
 canvas.width = wWidth;
 const player = {} // this will be all things "this" player
+let orbs = []; // global for all non-player orbs
 
 // put the modals into variables so we can interact with them.
 const loginmodal = new bootstrap.Modal(document.querySelector('#loginModal'));
@@ -34,5 +35,5 @@ document.querySelector('.start-game').addEventListener('click', (e) => {
     elArray.forEach(el => {
       el.removeAttribute('hidden')
     })
-    init();
+    init(); //init is inside of socketStuff.js
 })
